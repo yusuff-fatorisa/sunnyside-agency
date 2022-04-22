@@ -31,6 +31,10 @@ Pre-Requisites
 	color: hsl(228, 45%, 44%);
 }
 
+.attribution a:hover {
+	color: var(--Soft-red);
+}
+
 /*
 Body Styling
 */
@@ -102,6 +106,11 @@ Container Styling
 	padding-block: 10rem;
 }
 
+.gallery {
+	grid-area: designs;
+	display: flex;
+}
+
 .footer {
 	grid-area: footer;
 	display: flex;
@@ -114,11 +123,6 @@ Container Styling
 	margin-top: -5px;
 }
 
-
-.gallery {
-	grid-area: designs;
-	display: flex;
-}
 
 
 /*
@@ -160,13 +164,15 @@ Header Styling
 	justify-content: space-between;
 	align-items: center;
 	width: 95%;
+	padding-top: 20px;
 }
 
 .header .images > span:nth-of-type(4) ul {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 25px;list-style-type: none;
+	gap: 25px;
+	list-style-type: none;
 	font-family: 'Barlow', sans-serif;
 	padding-right: 30px;
 }
@@ -176,28 +182,60 @@ Header Styling
 	color: var(--White);
 }
 
+.header .images > span:nth-of-type(4) li:nth-of-type(4) a {
+	color: var(--Very-dark-grayish-blue);
+	text-transform: uppercase;
+	background-color: var(--White);
+	height: 40px;
+	width: 85px;
+	border: solid 25px var(--White);
+	border-radius: 50px;
+	font-family: 'Fraunces', serif;
+
+}
+
+.header .images > span:nth-of-type(4) li:nth-of-type(4) a:hover {
+	border-color:#edece5;
+	background-color: #edece5;
+}
+
 .header .images > h1 {
 	position: absolute;
-	top: 20%;
-	left: 30%;
+	top: 25%;
+	left: 27.5%;
 	color: var(--White);
 	text-transform: uppercase;
 	font-family: 'Fraunces', serif;
-	letter-spacing: 5px;
+	font-size: 50px;
+	letter-spacing: 7.5px;
+}
+
+.header .images > img {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	padding-top: 20px;
+	display: none;
 }
 
  /*
 Transform Styling
  */
 
-.transform .text {
-	flex-grow: 1;
+.transform .text-container {
+	flex-basis: 50%;
+	position: relative;
+}
+
+.text-container .text {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	padding-left: 75px;
-	text-align: left;
 	gap: 30px;
+	position: absolute;
+	top: 0;
+	left: 20%;
+	transform: translateX(50%);
+	transform: translateY(-50%);
 }
 
 .text h2 {
@@ -210,13 +248,33 @@ Transform Styling
 	font-size: 13px;
 }
 
-.text a {
+.text .learn-more {
+	position: relative;
+	width: 100px;
+}
+
+.text .learn-more a {
 	text-decoration: none;
 	color: black;
 	font-family: 'Fraunces', serif;
 	text-transform: uppercase;
 	font-size: 13px;
 }
+
+.learn-more hr {
+	width: 105px;
+	height: 7.5px;
+	background-color: var(--Yellow);
+	border-radius: 7.5px;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	z-index: -1;
+	transform: translateX(-50%);
+	border: none;
+	outline: none;
+}
+
 
 .transform .image {
 	flex-basis: 50%;
@@ -246,13 +304,20 @@ Stand-out Styling
 	display: none;
 }
 
+.stand-out .text-container {
+	flex-basis: 50%;
+	position: relative;
+}
+
 .stand-out .text {
-	flex-grow: 1;
+	position: absolute;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	gap: 30px;
-	padding-left: 75px;
+	top: 0;
+	left: 20%;
+	transform: translateX(50%);
+	transform: translateY(-50%);
 }
 
 .stand-out .text h2 {
@@ -274,12 +339,27 @@ Stand-out Styling
 	font-size: 13px;
 }
 
+.stand-out .learn-more hr {
+	width: 105px;
+	height: 7.5px;
+	background-color: var(--Soft-red);
+	border-radius: 7.5px;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	z-index: -1;
+	transform: translateX(-50%);
+	border: none;
+	outline: none;
+}
+
 /*
 Display-work Styling
 */
 
 .display-work .graphics {
 	position: relative;
+	flex-basis: 50%;
 }
 
 .graphics img {
@@ -292,6 +372,7 @@ Display-work Styling
 
 .display-work .photography {
 	position: relative;
+	flex-basis: 50%;
 }
 
 .photography img {
@@ -304,8 +385,10 @@ Display-work Styling
 
 .graphics > span, .photography > span {
 	position: absolute;
-	left: 25%;
-	top: 60%;
+	left: 35%;
+	top: 65%;
+	transform: translateX(50%);
+	transform: translateY(-50%);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -315,26 +398,28 @@ Display-work Styling
 
 .graphics > span h2 {
 	font-family: 'Fraunces', serif;
-	font-size: 22px;
+	font-size: 30px;
 	color: var(--Dark-desaturated-cyan-graphic-design-text);
 }
 
 .graphics > span p {
 	font-family: 'Barlow', sans-serif;
 	font-size: 11px;
+	line-height: 1.5;
 	color: var(--Dark-desaturated-cyan-graphic-design-text);
 	text-align: center;
 }
 
 .photography > span h2 {
 	font-family: 'Fraunces', serif;
-	font-size: 22px;
+	font-size: 30px;
 	color: var(--Dark-blue-photography-text);
 }
 
 .photography > span p {
 	font-family: 'Barlow', sans-serif;
 	font-size: 11px;
+	line-height: 1.5;
 	color: var(--Dark-blue-photography-text);
 	text-align: center;
 }
@@ -352,6 +437,7 @@ Testimonials Styling
 }
 
 .testimonials > div {
+	flex-basis: 30%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -450,6 +536,10 @@ Footer Styling
 	font-size: 18px;
 }
 
+.footer > div:nth-of-type(1) a:hover {
+	color: var(--White);
+}
+
 
 .footer > div:nth-of-type(2) .socials {
 	display: flex;
@@ -463,6 +553,80 @@ Footer Styling
 	color: var(--Dark-desaturated-cyan-graphic-design-text);
 }
 
+.socials a:hover {
+	color: var(--White);
+}
+
 .socials .fa-brands {
 	font-size: 25px;
+}
+
+
+/*
+Media Query
+*/
+
+@media screen and (max-width: 1200px) {
+	.header .images h1 {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.header .images h1 {
+		font-size: 32px;
+	}
+}
+
+
+@media screen and (max-width: 1000px) {
+	.header .images h1 {
+		font-size: 26px;
+	}
+
+	.graphics > span, .photography > span {
+		left: 25%;
+	}
+
+	.testimonials > div {
+		gap: 43px;
+	}
+}
+
+@media screen and (max-width: 870px) {
+	.text-container .text {
+		left: 10%;
+	}
+
+	.graphics > span, .photography > span {
+		left: 20%;
+	}
+
+	.testimonials > div {
+		gap: 30px;
+	}
+
+	.testimonials .reviews article {
+		font-size: 10.5px;
+	}
+}
+
+@media screen and (max-width: 735px) {
+	.text-container .text {
+		left: 5%;
+	}
+}
+
+/*
+Mobile Media Query
+*/
+
+@media screen and (max-width: 700px) {
+	.header .images > span:nth-of-type(4)  nav {
+		display: none;
+	}
+
+	.header .images > img {
+		display: initial;
+	}
 }
