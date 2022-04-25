@@ -913,7 +913,6 @@ Mobile Media Query
 	}
 
 	.transform .text p {
-		font-size: ;
 		width: 98%;
 	}
 
@@ -922,5 +921,9 @@ Mobile Media Query
 	}
 	.stand-out .text p {
 		width: 98%;
+	}
+
+	.graphics .text p, .photography .text p {
+		font-size: 12px;
 	}
 }
